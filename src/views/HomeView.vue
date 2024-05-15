@@ -12,6 +12,8 @@ import { Calendar } from '@element-plus/icons-vue'
       </template>
       Route
     </el-tab-pane>
+  </el-tabs>
+
 
     <el-tabs type="border-card" class="demo-tabs">
     <el-tab-pane>
@@ -22,6 +24,7 @@ import { Calendar } from '@element-plus/icons-vue'
       </template>
       Route
     </el-tab-pane>
+  </el-tabs>
 
     <el-tabs type="border-card" class="demo-tabs">
     <el-tab-pane>
@@ -32,6 +35,5 @@ import { Calendar } from '@element-plus/icons-vue'
       </template>
       Route
     </el-tab-pane>
-    
   </el-tabs>
 </template>
