@@ -2,8 +2,14 @@
 import formSearch from '@/components/utils/formSearch.vue';
 import CategorieItem from '@/components/utils/CategorieItem.vue';
 import { useCategoriesStore } from '@/stores/categories';
+import { onMounted } from 'vue';
 
 const store = useCategoriesStore();
+
+const fetch = onMounted( () => {
+    store.fecthCategories()
+})
+
 </script>
 
 <template>

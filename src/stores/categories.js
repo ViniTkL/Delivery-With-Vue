@@ -7,9 +7,10 @@ export const useCategoriesStore = defineStore('categorie', () => {
 
   // Ações que o user poder fazer
   const fecthCategories = async () => {
-    const request = await fetch("urlMockAqui");
+    const request = await fetch("https://664c0db135bbda10987ecef9.mockapi.io/api/v1/Fruits");
     const response = await request.json();
     categories.value = response;
+    console.log(categories.value)
   }
 
   return { categories, fecthCategories}
