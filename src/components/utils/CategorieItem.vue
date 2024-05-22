@@ -1,9 +1,19 @@
 <script setup>
     const props = defineProps(["category"])
+    import { useCategoriesStore } from '@/stores/categories';
+    import { useRouter } from 'vue-router';
+    const router = useRouter()
+    const store = useCategoriesStore();
+
+    const onCategoryClick = () => {
+        alert(`Clicou ${props.category.name}`)
+        store.selectCategory(props.category.name)
+        router.push("detalhe-categoria")
+    }
 </script>
 
 <template>
-<div class="categorie-item">
+<div class="categorie-item" @click="onCategoryClick()">
     <img :src="category.image" alt="Foto da categoria">
     <h3>{{ category.name }}</h3>
     <span>{{ category.quantity }}</span>
