@@ -1,15 +1,18 @@
 <script setup>
     import { useCategoriesStore } from '@/stores/categories';
-    import { useProdu}
+    import { useProductsStore} from '@/stores/products'
+    import ProductItem from '@/components/utils/ProductItem.vue';
+
     const store = useCategoriesStore();
 
-    const storeProducts = useProductsStore
+    const storeProducts = useProductsStore();
 </script>
 
 <template>
 <div class="categorie-item">
     <h3>{{ store.selectedCategory }}</h3>
 </div>
+    <ProductItem></ProductItem>
 </template>
 
 <style scoped>
