@@ -2,17 +2,22 @@
     import { useCategoriesStore } from '@/stores/categories';
     import { useProductsStore} from '@/stores/products'
     import ProductItem from '@/components/utils/ProductItem.vue';
+    import { onMounted } from 'vue';
 
     const store = useCategoriesStore();
 
     const storeProducts = useProductsStore();
+
+    onMounted(() => {
+        storeProducts.fetchProducts();
+})
 </script>
 
 <template>
 <div class="categorie-item">
     <h3>{{ store.selectedCategory }}</h3>
 </div>
-    <ProductItem></ProductItem>
+    <ProductItem v-for="product in storeProducts.products" :produto="product"></ProductItem>
 </template>
 
 <style scoped>

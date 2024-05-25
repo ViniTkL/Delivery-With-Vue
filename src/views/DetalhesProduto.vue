@@ -44,6 +44,7 @@ const store = useProductsStore();
 .actions{
     display: flex;
     margin: 16px 0;
+    gap: 12px;
 }
 
 .actions button {

@@ -4,33 +4,34 @@ import CategoriaView from './CategoriaView.vue';
 </script>
 
 <template>
- <el-tabs type="border-card" class="demo-tabs">
-    <el-tab-pane>
-      <template #label>
-        <span class="custom-tabs-label">
-          <el-icon><Menu></Menu></el-icon>
-        </span>
+  <main>
+    <el-tabs  class="menu-tabs" tab-position="bottom" type="border-card">
+      <el-tab-pane>
+        <template #label>
+          <span class="tabs-label">
+            <el-icon><Menu /></el-icon>
+          </span>
+        </template>
         <CategoriaView />
-      </template>
-      Route
-    </el-tab-pane>
-    
-    <el-tab-pane>
-      <template #label>
-        <span class="custom-tabs-label">
-          <el-icon><ShoppingCart></ShoppingCart></el-icon>
-        </span>
-      </template>adasdasdasd
-    </el-tab-pane>
-    
-    <el-tab-pane>
-      <template #label>
-        <span class="custom-tabs-label">
-          <el-icon><User></User></el-icon>
-        </span>
-      </template>adasdas
-    </el-tab-pane>
-  </el-tabs>
+      </el-tab-pane>
+      <el-tab-pane>
+        <template #label>
+          <span class="tabs-label">
+            <el-icon><ShoppingCart /></el-icon>
+          </span>
+        </template>
+        Config
+      </el-tab-pane>
+      <el-tab-pane>
+        <template #label>
+          <span class="tabs-label">
+            <el-icon><User /></el-icon>
+          </span>
+        </template>
+        Role
+      </el-tab-pane>
+    </el-tabs>
+  </main>
 </template>
 
 
@@ -45,18 +46,23 @@ import CategoriaView from './CategoriaView.vue';
     height: 100vh;
   }
 
-  .menu-tabs .el-tabs__nav{
-    float: none
+  .menu-tabs > .el-tabs__header{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
   }
 
   .menu-tabs .el-tabs__nav-scroll, 
   .menu-tabs .el-tabs__nav-wrap,
-  .menu-tabs .el-tabs__nav-nav{
+  .menu-tabs .el-tabs__nav{
     height: 100%;
+    float: none;
   }
 
-  .menu-tabs .el-tabs-items{
+  .menu-tabs .el-tabs__item{
     flex: 1;
+    height: 100%;
   }
 
 </style>

@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import SplashView from"@/views/SplashView.vue"
 import HomeView from"@/views/HomeView.vue"
 import DetalheCategoryView from"@/views/DetalheCategoryView.vue"
-import DetalheProdutoView from "@/views/DetalheProdutoyView.vue"
+import DetalheProdutoView from "@/views/DetalhesProduto.vue"
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [

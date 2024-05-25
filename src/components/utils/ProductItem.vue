@@ -1,21 +1,21 @@
 <script setup>
 import {CollectionTag, ShoppingCart} from "@element-plus/icons-vue"
 import {useProductsStore} from '@/stores/products'
-import { useRoute, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 const props = defineProps(["produto"])
 
 const router = useRouter()
 const store = useProductsStore();
 
 const onProductClick = () => {
-    store.selectedCategory(props.produto)
+    store.selectProduct(props.produto)
     router.push('/detalhe-produto');
 }
 
 </script>
 
 <template>
-<div class="product-container">
+<div @click="onProductClick()" class="product-container">
     <img :src="produto.image" alt="foto do produto">
     <div class="info-container">
         <h2>{{ produto.name }}</h2>
@@ -30,47 +30,39 @@ const onProductClick = () => {
 </template>
 
 <style scoped>
-.produt-container{
+.product-container {
     display: flex;
 }
-
-img{
+img {
     flex: 1;
     margin: 8px;
     border-radius: 16px;
-    border: 1px solid #444444;
+    border: solid 1px #444;
     width: 128px;
-    height: 128px;
 }
-
-.info-container{
+.info-container {
     flex: 1;
 }
-
-h2, span{
+h2, span {
     font-weight: 600;
     font-size: 16px;
     margin: 4px 0 4px 8px;
-    gap: 12px
 }
-
-.actions{
+.actions {
     display: flex;
     margin: 4px 8px;
+    gap: 12px;
 }
-
 .actions button {
     flex: 1;
     height: 28px;
     border-radius: 4px;
-    border: 1px solid #444444;
+    border: solid 1px #444;
 }
-
-.like{
+.like {
     background-color: white;
 }
-
-.shop{
+.shop {
     background-color: aquamarine;
 }
 </style>
